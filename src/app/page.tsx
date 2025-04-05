@@ -100,7 +100,7 @@ const blogs = [
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [hoveredContent, setHoveredContent] = useState("");
+  // const [hoveredContent, setHoveredContent] = useState("");
 
   return (
     <>
@@ -235,10 +235,10 @@ export default function Home() {
               JAGUAR MEDIA & ENTERTAINMENTS LLP
             </h2>
             <p className="text-gray-600 leading-relaxed mb-6 text-base sm:text-lg">
-              At Jaguar Media & Entertainments LLP, it’s more than just media production…
+              At Jaguar Media & Entertainments LLP, its more than just media production…
               It’s about fueling passion, creativity, and storytelling across every screen.
               From aspiring performers to seasoned artists, we provide a dynamic platform
-              where talent meets opportunity. Whether you're stepping into the spotlight for
+              where talent meets opportunity. Whether youre stepping into the spotlight for
               the first time or building your professional journey, Jaguar is here to amplify
               your vision and voice.
             </p>
@@ -280,8 +280,8 @@ export default function Home() {
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.3 }}
         >
-          At Jaguar Media & Entertainments LLP, it’s more than just media production…
-          It’s about fueling passion, creativity, and storytelling across every screen.
+          At Jaguar Media & Entertainments LLP, its more than just media production…
+          Its about fueling passion, creativity, and storytelling across every screen.
         </motion.p>
 
         {/* Swiper Slider */}
