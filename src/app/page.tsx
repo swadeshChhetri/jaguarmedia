@@ -1,7 +1,7 @@
 'use client'
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { X, Facebook, Twitter, Instagram, Mail, Phone, MapPin, Menu, User } from "lucide-react";
+import { X, Facebook, Twitter, Instagram, Mail, Phone, MapPin, Menu} from "lucide-react";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation, Autoplay } from "swiper/modules";
@@ -100,6 +100,7 @@ const blogs = [
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
   // const [hoveredContent, setHoveredContent] = useState("");
 
   return (
@@ -119,15 +120,6 @@ export default function Home() {
             <Phone size={20} />
             <span className="font-semibold">CALL US : 863.424.7355</span>
           </div>
-
-          {/* Auth Links */}
-          <div className="hidden sm:flex space-x-4">
-            <a href="#" className="flex items-center space-x-1 hover:text-gray-300">
-              <User size={18} />
-              <span>REGISTER</span>
-            </a>
-            <a href="#" className="hover:text-gray-300">LOG IN</a>
-          </div>
         </div>
 
         {/* Navigation Bar */}
@@ -140,9 +132,73 @@ export default function Home() {
           {/* Nav Links - Desktop */}
           <ul className="hidden md:flex space-x-6 text-black font-semibold">
             <li className="hover:text-red-600"><a href="#">HOME</a></li>
-            <li className="text-red-600 border-b-2 border-red-600"><a href="#">ABOUT US</a></li>
-            <li className="hover:text-red-600"><a href="#">PROJECTS</a></li>
-            <li className="hover:text-red-600"><a href="#">CONTACT US</a></li>
+            <li className="text-red-600 border-b-2 border-red-600"><a href="/aboutus">ABOUT US</a></li>
+            <li className="hover:text-red-600"><a href="/ourprojects">PROJECTS</a></li>
+               <div className="flex justify-center items-center bg-gradient-to-b from-blue-400 to-white">
+            <button
+              onClick={() => setIsOpen(true)}
+              className="px-6 py-3 bg-blue-500 text-white rounded-lg shadow-lg hover:bg-blue-600 transition"
+            >
+              Contact Us
+            </button>
+
+            {isOpen && (
+              <div className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-50 z-50">
+                <motion.div
+                  initial={{ opacity: 0, y: -50 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -50 }}
+                  className="bg-white p-6 rounded-2xl shadow-2xl w-[90%] max-w-lg"
+                >
+                  <div className="flex justify-between items-center mb-4">
+                    <h2 className="text-2xl font-bold">Get in Touch</h2>
+                    <X
+                      className="cursor-pointer text-gray-500 hover:text-gray-700"
+                      onClick={() => setIsOpen(false)}
+                    />
+                  </div>
+                  <p className="text-gray-600 mb-4">Nunc erat cursus tellus gravida.</p>
+
+                  <form className="space-y-4">
+                    <div className="grid grid-cols-2 gap-4">
+                      <input
+                        type="text"
+                        placeholder="First Name"
+                        className="p-3 border border-gray-300 rounded-lg w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      />
+                      <input
+                        type="text"
+                        placeholder="Last Name"
+                        className="p-3 border border-gray-300 rounded-lg w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      />
+                    </div>
+                    <div className="grid grid-cols-2 gap-4">
+                      <input
+                        type="email"
+                        placeholder="Email"
+                        className="p-3 border border-gray-300 rounded-lg w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      />
+                      <input
+                        type="tel"
+                        placeholder="Phone Number"
+                        className="p-3 border border-gray-300 rounded-lg w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      />
+                    </div>
+                    <textarea
+                      placeholder="What do you have in mind?"
+                      className="p-3 border border-gray-300 rounded-lg w-full h-28 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    ></textarea>
+                    <button
+                      type="submit"
+                      className="w-full py-3 bg-blue-500 text-white font-semibold rounded-lg shadow-lg hover:bg-blue-600 transition"
+                    >
+                      Submit
+                    </button>
+                  </form>
+                </motion.div>
+              </div>
+            )}
+          </div>
           </ul>
 
           {/* Burger Menu Icon - Mobile */}
