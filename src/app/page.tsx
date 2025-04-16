@@ -1,35 +1,38 @@
 'use client'
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { X, Facebook, Twitter, Instagram, Mail, Phone, MapPin, Menu} from "lucide-react";
+import { X, Facebook, Twitter, Instagram, Mail, Phone, MapPin, Menu } from "lucide-react";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
+import 'swiper/css/pagination';
+import Link from "next/link";
+
 
 const classes = [
   {
     title: "BALLET & POINTE",
     description:
       "Ballet classes consist of barre and center work and traveling exercises.",
-    image: "/ballet.jpg",
+    image: "/p1.jpg",
   },
   {
     title: "BALLET/TAP COMBO",
     description: "A combination class of both Ballet and Tap for 4 & 5 yr olds.",
-    image: "/ballet-tap.jpg",
+    image: "/p2.jpg",
   },
   {
     title: "CREATIVE MOVEMENT",
     description:
       "An introduction to the art of dance. Dancers will learn coordination and motor skills.",
-    image: "/creative-movement.jpg",
+    image: "/p3.png",
   },
   {
     title: "HIP HOP",
     description: "High-energy dance style, focusing on rhythm, and freestyle movements.",
-    image: "/hip-hop.jpg",
+    image: "/p4.jpg",
   },
 ];
 const videos = [
@@ -42,32 +45,32 @@ const clients = [
   {
     name: "Miss Amie",
     role: "Owner/Director",
-    img: "/path-to-image-1.jpg",
+    img: "/c1.jpg",
     details: "Miss Amie is an experienced director with a passion for dance.",
   },
   {
     name: "Miss Mandy",
     role: "Ballet Instructor",
-    img: "/path-to-image-2.jpg",
+    img: "/c2.jpg",
     details:
       "Miss Mandy is originally from Sewell, NJ and began her dance training with Dance! by Debra DiNote.",
   },
   {
     name: "Miss Alyssa",
     role: "Tap Instructor",
-    img: "/path-to-image-3.jpg",
+    img: "/c3.jpg",
     details: "Miss Alyssa has been teaching tap for over 10 years.",
   },
   {
     name: "Miss Leah",
     role: "Pre-School Class Instructor",
-    img: "/path-to-image-4.jpg",
+    img: "/c4.jpg",
     details: "Miss Leah specializes in pre-school dance programs.",
   },
   {
     name: "Miss Sarah",
     role: "Jazz Instructor",
-    img: "/path-to-image-5.jpg",
+    img: "/c5.jpg",
     details: "Miss Sarah has choreographed award-winning jazz performances.",
   },
 ];
@@ -75,7 +78,7 @@ const blogs = [
   {
     date: "01",
     month: "JUN",
-    img: "/path-to-image-1.jpg",
+    img: "/c6.jpg",
     title: "Lorem Ipsum Dolor Sit",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
@@ -83,7 +86,7 @@ const blogs = [
   {
     date: "01",
     month: "JUN",
-    img: "/path-to-image-2.jpg",
+    img: "/c7.jpg",
     title: "Lorem Ipsum Dolor Sit",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
@@ -91,7 +94,7 @@ const blogs = [
   {
     date: "01",
     month: "JUN",
-    img: "/path-to-image-3.jpg",
+    img: "/c8.jpg",
     title: "Lorem Ipsum Dolor Sit",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
@@ -99,135 +102,18 @@ const blogs = [
 ];
 
 export default function Home() {
-  const [menuOpen, setMenuOpen] = useState(false);
-  const [isOpen, setIsOpen] = useState(false);
+
   // const [hoveredContent, setHoveredContent] = useState("");
 
   return (
     <>
-      <header className="w-full">
-        {/* Top Bar */}
-        <div className="bg-red-700 text-white text-sm py-3 px-6 md:px-12 flex justify-between items-center">
-          {/* Social Icons */}
-          <div className="flex space-x-3 ml-28">
-            <a href="#" className="hover:text-gray-300"><Facebook size={20} /></a>
-            <a href="#" className="hover:text-gray-300"><Twitter size={20} /></a>
-            <a href="#" className="hover:text-gray-300"><Instagram size={20} /></a>
-          </div>
 
-          {/* Contact Info */}
-          <div className="hidden sm:flex items-center space-x-2">
-            <Phone size={20} />
-            <span className="font-semibold">CALL US : 863.424.7355</span>
-          </div>
-        </div>
-
-        {/* Navigation Bar */}
-        <nav className="bg-white shadow-md px-6 py-6 md:px-12 flex justify-between items-center h-16 relative ">
-          {/* Logo */}
-          <div >
-            <Image src="/logo.png" alt="Logo" width={100} height={20} className="rounded-xl" />
-          </div>
-
-          {/* Nav Links - Desktop */}
-          <ul className="hidden md:flex space-x-6 text-black font-semibold">
-            <li className="hover:text-red-600"><a href="#">HOME</a></li>
-            <li className="text-red-600 border-b-2 border-red-600"><a href="/aboutus">ABOUT US</a></li>
-            <li className="hover:text-red-600"><a href="/ourprojects">PROJECTS</a></li>
-               <div className="flex justify-center items-center bg-gradient-to-b from-blue-400 to-white">
-            <button
-              onClick={() => setIsOpen(true)}
-              className="px-6 py-3 bg-blue-500 text-white rounded-lg shadow-lg hover:bg-blue-600 transition"
-            >
-              Contact Us
-            </button>
-
-            {isOpen && (
-              <div className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-50 z-50">
-                <motion.div
-                  initial={{ opacity: 0, y: -50 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -50 }}
-                  className="bg-white p-6 rounded-2xl shadow-2xl w-[90%] max-w-lg"
-                >
-                  <div className="flex justify-between items-center mb-4">
-                    <h2 className="text-2xl font-bold">Get in Touch</h2>
-                    <X
-                      className="cursor-pointer text-gray-500 hover:text-gray-700"
-                      onClick={() => setIsOpen(false)}
-                    />
-                  </div>
-                  <p className="text-gray-600 mb-4">Nunc erat cursus tellus gravida.</p>
-
-                  <form className="space-y-4">
-                    <div className="grid grid-cols-2 gap-4">
-                      <input
-                        type="text"
-                        placeholder="First Name"
-                        className="p-3 border border-gray-300 rounded-lg w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
-                      />
-                      <input
-                        type="text"
-                        placeholder="Last Name"
-                        className="p-3 border border-gray-300 rounded-lg w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
-                      />
-                    </div>
-                    <div className="grid grid-cols-2 gap-4">
-                      <input
-                        type="email"
-                        placeholder="Email"
-                        className="p-3 border border-gray-300 rounded-lg w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
-                      />
-                      <input
-                        type="tel"
-                        placeholder="Phone Number"
-                        className="p-3 border border-gray-300 rounded-lg w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
-                      />
-                    </div>
-                    <textarea
-                      placeholder="What do you have in mind?"
-                      className="p-3 border border-gray-300 rounded-lg w-full h-28 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    ></textarea>
-                    <button
-                      type="submit"
-                      className="w-full py-3 bg-blue-500 text-white font-semibold rounded-lg shadow-lg hover:bg-blue-600 transition"
-                    >
-                      Submit
-                    </button>
-                  </form>
-                </motion.div>
-              </div>
-            )}
-          </div>
-          </ul>
-
-          {/* Burger Menu Icon - Mobile */}
-          <div className="md:hidden">
-            <button onClick={() => setMenuOpen(!menuOpen)}>
-              {menuOpen ? <X size={28} /> : <Menu size={28} />}
-            </button>
-          </div>
-
-          {/* Slide Menu - Mobile */}
-          <div className={`fixed top-0 right-0 h-full w-64 bg-white shadow-lg transition-transform duration-300 z-50 ${menuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
-            <div className="p-6 flex flex-col space-y-6">
-              <button className="self-end" onClick={() => setMenuOpen(false)}>
-                <X size={28} />
-              </button>
-              <a href="#" className="hover:text-red-600">HOME</a>
-              <a href="#" className="text-red-600 border-b-2 border-red-600">ABOUT US</a>
-              <a href="#" className="hover:text-red-600">PROJECTS</a>
-              <a href="#" className="hover:text-red-600">CONTACT US</a>
-            </div>
-          </div>
-        </nav>
-      </header>
       <section
         className="relative flex items-center min-h-screen bg-cover bg-center px-4 sm:px-10 lg:px-20"
-        style={{ backgroundImage: "url('/your-background.jpg')" }}
+        style={{ backgroundImage: "url('/hero.jpg')" }}
       >
         {/* Overlay */}
-        <div className="absolute inset-0 bg-black bg-opacity-40"></div>
+        <div className="absolute inset-0 bg-black/60" />
 
         {/* Content */}
         <motion.div
@@ -300,26 +186,28 @@ export default function Home() {
             </p>
 
             {/* Read More Button */}
-            <motion.button
-              className="px-6 py-3 bg-red-600 hover:bg-red-700 text-white text-base sm:text-lg rounded-md shadow-lg"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              Read More
-            </motion.button>
+            <Link href="/aboutus">
+              <motion.button
+                className="px-6 py-3 bg-red-600 hover:bg-red-700 text-white text-base sm:text-lg rounded-md shadow-lg"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                Read More
+              </motion.button>
+            </Link>
           </motion.div>
         </div>
       </section>
-      
-      <section className="relative py-16 px-4 sm:px-6 md:px-12 lg:px-24 bg-red-900 text-white overflow-hidden">
-        {/* Background Text */}
-        <h1 className="absolute top-6 sm:top-10 left-1/2 -translate-x-1/2 text-4xl sm:text-6xl lg:text-7xl text-gray-200 font-bold opacity-10 pointer-events-none whitespace-nowrap">
+
+      <section className="relative py-16 px-6 sm:px-8 lg:px-24 bg-red-900 text-white overflow-hidden">
+        {/* Faint Background Heading */}
+        <h1 className="absolute top-8 left-1/2 -translate-x-1/2 text-5xl sm:text-6xl lg:text-7xl text-gray-200 font-bold opacity-10 pointer-events-none whitespace-nowrap z-0">
           Our Projects
         </h1>
 
-        {/* Title */}
+        {/* Main Title */}
         <motion.h2
-          className="text-center text-2xl sm:text-3xl md:text-4xl font-bold relative mb-4 sm:mb-6"
+          className="relative text-center text-3xl sm:text-4xl md:text-5xl font-bold mb-6 z-10"
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -330,48 +218,51 @@ export default function Home() {
 
         {/* Description */}
         <motion.p
-          className="text-center max-w-3xl mx-auto text-sm sm:text-base md:text-lg mb-6 md:mb-8"
+          className="relative max-w-3xl mx-auto text-center text-base sm:text-lg md:text-xl mb-10 z-10"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.3 }}
         >
-          At Jaguar Media & Entertainments LLP, its more than just media production…
-          Its about fueling passion, creativity, and storytelling across every screen.
+          At Jaguar Media & Entertainments LLP, it’s more than just media production… it's about fueling passion, creativity, and storytelling across every screen.
         </motion.p>
 
-        {/* Swiper Slider */}
+        {/* Swiper Carousel */}
         <Swiper
           modules={[Navigation, Autoplay]}
-          spaceBetween={20}
+          spaceBetween={24}
           slidesPerView={1}
           breakpoints={{
             640: { slidesPerView: 1 },
             768: { slidesPerView: 2 },
             1024: { slidesPerView: 3 },
           }}
-          navigation
+          navigation={{
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          }}
           autoplay={{ delay: 3000, disableOnInteraction: false }}
-          className="max-w-6xl mx-auto"
+          className="relative max-w-7xl mx-auto px-2 z-10"
         >
           {classes.map((cls, index) => (
             <SwiperSlide key={index} className="flex justify-center">
               <motion.div
-               className="bg-white text-black rounded-xl overflow-hidden shadow-lg w-full max-w-xs sm:max-w-sm ml-12 sm:ml-0"
+                className="bg-white text-black rounded-2xl shadow-md overflow-hidden w-full max-w-xs sm:max-w-sm transition-transform"
                 whileHover={{ scale: 1.05 }}
               >
                 <Image
                   src={cls.image}
                   alt={cls.title}
-                  width={300}
-                  height={200}
+                  width={400}
+                  height={250}
                   className="w-full h-48 sm:h-56 object-cover"
+                  loading="lazy"
                 />
-                <div className="p-4 text-center">
-                  <h3 className="text-lg sm:text-xl font-bold">{cls.title}</h3>
-                  <p className="text-gray-600 text-sm sm:text-base my-2">{cls.description}</p>
+                <div className="p-5 text-center">
+                  <h3 className="text-xl font-semibold mb-2">{cls.title}</h3>
+                  <p className="text-gray-600 text-sm sm:text-base mb-4">{cls.description}</p>
                   <motion.button
-                    className="mt-4 px-5 py-2 text-sm sm:text-base bg-red-600 hover:bg-red-700 text-white rounded-md"
+                    className="px-6 py-2 bg-red-600 hover:bg-red-700 text-white text-sm rounded-md transition-colors"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >
@@ -382,7 +273,12 @@ export default function Home() {
             </SwiperSlide>
           ))}
         </Swiper>
+
+        {/* Optional: Accessible Nav Controls (can style these later) */}
+        <div className="swiper-button-prev" aria-label="Previous slide"></div>
+        <div className="swiper-button-next" aria-label="Next slide"></div>
       </section>
+
 
       <section className="relative py-16 px-6 md:px-12 lg:px-24 bg-gray-900 text-white">
         {/* Background Text */}
@@ -452,72 +348,71 @@ export default function Home() {
           </motion.button>
         </div>
       </section>
-      <section className="relative py-16 px-6 md:px-12 lg:px-24 bg-white text-black">
-        {/* Background Text */}
-        <h1 className="absolute top-10 left-1/2 -translate-x-1/2 text-7xl text-gray-300 font-bold opacity-20">
-          Our Clients
-        </h1>
 
-        {/* Title */}
-        <motion.h2
-          className="text-center text-4xl font-bold relative mb-6 text-red-600"
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+      <section className="relative bg-gray-100 py-16 px-6 md:px-12 lg:px-24 overflow-hidden">
+  {/* Background Text */}
+  <h1 className="absolute top-10 left-1/2 -translate-x-1/2 text-7xl text-gray-300 font-bold opacity-20">
+    Our Clients
+  </h1>
+
+  {/* Left-side Image */}
+  <div className="absolute left-0 bottom-0 w-48 md:w-64 lg:w-72 -z-10">
+    <Image
+      src="/path-to-side-image.png"
+      alt="Side Image"
+      width={500}
+      height={500}
+      className="object-contain"
+    />
+  </div>
+
+  {/* Title */}
+  <motion.h2
+    className="text-center text-4xl font-bold text-red-600 relative mb-6"
+    initial={{ opacity: 0, y: -20 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.8 }}
+  >
+    Our Clients
+  </motion.h2>
+
+  {/* Swiper Slider */}
+  <Swiper
+    modules={[Pagination, Autoplay]}
+    spaceBetween={20}
+    slidesPerView={1}
+    breakpoints={{
+      640: { slidesPerView: 2 },
+      768: { slidesPerView: 3 },
+      1024: { slidesPerView: 4 },
+    }}
+    pagination={{ clickable: true }}
+    autoplay={{ delay: 4000, disableOnInteraction: false }}
+    className="max-w-6xl mx-auto"
+  >
+    {clients.map((blog, index) => (
+      <SwiperSlide key={index}>
+        <motion.div
+          className="bg-white shadow-lg rounded-lg overflow-hidden transition-transform duration-300 hover:scale-105"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: index * 0.2 }}
         >
-          Our Clients
-        </motion.h2>
+          <Image
+            src={blog.img}
+            alt={blog.name}
+            width={400}
+            height={250}
+            className="w-full h-48 object-cover"
+          />
+        </motion.div>
+      </SwiperSlide>
+    ))}
+  </Swiper>
+</section>
 
-        {/* Swiper Slider */}
-        <Swiper
-          modules={[Pagination, Autoplay]}
-          spaceBetween={20}
-          slidesPerView={1}
-          breakpoints={{
-            640: { slidesPerView: 2 },
-            768: { slidesPerView: 3 },
-            1024: { slidesPerView: 4 },
-          }}
-          pagination={{ clickable: true }}
-          autoplay={{ delay: 4000, disableOnInteraction: false }}
-          className="max-w-6xl mx-auto"
-        >
-          {clients.map((client, index) => (
-            <SwiperSlide key={index} className="flex flex-col items-center">
-              <motion.div
-                className="relative group bg-white rounded-lg shadow-lg overflow-hidden w-60 h-80 transition-all duration-300"
-              >
-                {/* Image */}
-                <img
-                  src={client.img}
-                  alt={client.name}
-                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                />
-
-                {/* Default Content */}
-                <div className="absolute inset-0 flex flex-col justify-end p-4 bg-white">
-                  <h3 className="text-lg font-semibold text-center">{client.name}</h3>
-                  <p className="text-sm text-center text-gray-600">{client.role}</p>
-                </div>
-
-                {/* Hover Details */}
-                <div className="absolute inset-0 bg-red-600 text-white flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <h3 className="text-lg font-semibold">{client.name}</h3>
-                  <p className="text-sm text-center max-w-xs">{client.details}</p>
-                  <a href="#" className="mt-2 underline text-sm">
-                    Read More
-                  </a>
-                </div>
-              </motion.div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-
-        {/* Pagination Dots */}
-        <div className="flex justify-center mt-6">
-          <div className="swiper-pagination"></div>
-        </div>
-      </section>
+     
       <section className="relative bg-gray-100 py-16 px-6 md:px-12 lg:px-24 overflow-hidden">
         {/* Background Text */}
         <h1 className="absolute top-10 left-1/2 -translate-x-1/2 text-7xl text-gray-300 font-bold opacity-20">
@@ -582,6 +477,7 @@ export default function Home() {
           ))}
         </div>
       </section>
+
       <footer className="bg-white text-black py-10 px-6 md:px-12 lg:px-24 border-t">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Logo & Social Icons */}
