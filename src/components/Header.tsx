@@ -2,103 +2,103 @@
 import React from 'react'
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { X, Facebook, Twitter, Instagram, Mail, Phone, MapPin, Menu } from "lucide-react";
+import { X, Facebook, Twitter, Instagram, Phone, Menu } from "lucide-react";
 import Image from "next/image";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Navigation, Autoplay } from "swiper/modules";
+// import { Swiper, SwiperSlide } from "swiper/react";
+// import { Pagination, Navigation, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import { usePathname } from "next/navigation";
 
-const classes = [
-  {
-    title: "BALLET & POINTE",
-    description:
-      "Ballet classes consist of barre and center work and traveling exercises.",
-    image: "/ballet.jpg",
-  },
-  {
-    title: "BALLET/TAP COMBO",
-    description: "A combination class of both Ballet and Tap for 4 & 5 yr olds.",
-    image: "/ballet-tap.jpg",
-  },
-  {
-    title: "CREATIVE MOVEMENT",
-    description:
-      "An introduction to the art of dance. Dancers will learn coordination and motor skills.",
-    image: "/creative-movement.jpg",
-  },
-  {
-    title: "HIP HOP",
-    description: "High-energy dance style, focusing on rhythm, and freestyle movements.",
-    image: "/hip-hop.jpg",
-  },
-];
-const videos = [
-  { title: "PEDC Company Auditions", url: "https://www.youtube.com/embed/VIDEO_ID_1" },
-  { title: "PEDC Company Auditions", url: "https://www.youtube.com/embed/VIDEO_ID_2" },
-  { title: "PEDC Company Auditions", url: "https://www.youtube.com/embed/VIDEO_ID_3" },
-  { title: "PEDC Performance", url: "https://www.youtube.com/embed/VIDEO_ID_4" },
-];
-const clients = [
-  {
-    name: "Miss Amie",
-    role: "Owner/Director",
-    img: "/path-to-image-1.jpg",
-    details: "Miss Amie is an experienced director with a passion for dance.",
-  },
-  {
-    name: "Miss Mandy",
-    role: "Ballet Instructor",
-    img: "/path-to-image-2.jpg",
-    details:
-      "Miss Mandy is originally from Sewell, NJ and began her dance training with Dance! by Debra DiNote.",
-  },
-  {
-    name: "Miss Alyssa",
-    role: "Tap Instructor",
-    img: "/path-to-image-3.jpg",
-    details: "Miss Alyssa has been teaching tap for over 10 years.",
-  },
-  {
-    name: "Miss Leah",
-    role: "Pre-School Class Instructor",
-    img: "/path-to-image-4.jpg",
-    details: "Miss Leah specializes in pre-school dance programs.",
-  },
-  {
-    name: "Miss Sarah",
-    role: "Jazz Instructor",
-    img: "/path-to-image-5.jpg",
-    details: "Miss Sarah has choreographed award-winning jazz performances.",
-  },
-];
-const blogs = [
-  {
-    date: "01",
-    month: "JUN",
-    img: "/path-to-image-1.jpg",
-    title: "Lorem Ipsum Dolor Sit",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
-  },
-  {
-    date: "01",
-    month: "JUN",
-    img: "/path-to-image-2.jpg",
-    title: "Lorem Ipsum Dolor Sit",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
-  },
-  {
-    date: "01",
-    month: "JUN",
-    img: "/path-to-image-3.jpg",
-    title: "Lorem Ipsum Dolor Sit",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
-  },
-];
+// const classes = [
+//   {
+//     title: "BALLET & POINTE",
+//     description:
+//       "Ballet classes consist of barre and center work and traveling exercises.",
+//     image: "/ballet.jpg",
+//   },
+//   {
+//     title: "BALLET/TAP COMBO",
+//     description: "A combination class of both Ballet and Tap for 4 & 5 yr olds.",
+//     image: "/ballet-tap.jpg",
+//   },
+//   {
+//     title: "CREATIVE MOVEMENT",
+//     description:
+//       "An introduction to the art of dance. Dancers will learn coordination and motor skills.",
+//     image: "/creative-movement.jpg",
+//   },
+//   {
+//     title: "HIP HOP",
+//     description: "High-energy dance style, focusing on rhythm, and freestyle movements.",
+//     image: "/hip-hop.jpg",
+//   },
+// ];
+// const videos = [
+//   { title: "PEDC Company Auditions", url: "https://www.youtube.com/embed/VIDEO_ID_1" },
+//   { title: "PEDC Company Auditions", url: "https://www.youtube.com/embed/VIDEO_ID_2" },
+//   { title: "PEDC Company Auditions", url: "https://www.youtube.com/embed/VIDEO_ID_3" },
+//   { title: "PEDC Performance", url: "https://www.youtube.com/embed/VIDEO_ID_4" },
+// ];
+// const clients = [
+//   {
+//     name: "Miss Amie",
+//     role: "Owner/Director",
+//     img: "/path-to-image-1.jpg",
+//     details: "Miss Amie is an experienced director with a passion for dance.",
+//   },
+//   {
+//     name: "Miss Mandy",
+//     role: "Ballet Instructor",
+//     img: "/path-to-image-2.jpg",
+//     details:
+//       "Miss Mandy is originally from Sewell, NJ and began her dance training with Dance! by Debra DiNote.",
+//   },
+//   {
+//     name: "Miss Alyssa",
+//     role: "Tap Instructor",
+//     img: "/path-to-image-3.jpg",
+//     details: "Miss Alyssa has been teaching tap for over 10 years.",
+//   },
+//   {
+//     name: "Miss Leah",
+//     role: "Pre-School Class Instructor",
+//     img: "/path-to-image-4.jpg",
+//     details: "Miss Leah specializes in pre-school dance programs.",
+//   },
+//   {
+//     name: "Miss Sarah",
+//     role: "Jazz Instructor",
+//     img: "/path-to-image-5.jpg",
+//     details: "Miss Sarah has choreographed award-winning jazz performances.",
+//   },
+// ];
+// const blogs = [
+//   {
+//     date: "01",
+//     month: "JUN",
+//     img: "/path-to-image-1.jpg",
+//     title: "Lorem Ipsum Dolor Sit",
+//     description:
+//       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
+//   },
+//   {
+//     date: "01",
+//     month: "JUN",
+//     img: "/path-to-image-2.jpg",
+//     title: "Lorem Ipsum Dolor Sit",
+//     description:
+//       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
+//   },
+//   {
+//     date: "01",
+//     month: "JUN",
+//     img: "/path-to-image-3.jpg",
+//     title: "Lorem Ipsum Dolor Sit",
+//     description:
+//       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
+//   },
+// ];
 
 
 const Header = () => {

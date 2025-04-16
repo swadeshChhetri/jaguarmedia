@@ -1,7 +1,7 @@
 'use client'
-import { useState } from "react";
+// import { useState } from "react";
 import { motion } from "framer-motion";
-import { X, Facebook, Twitter, Instagram, Mail, Phone, MapPin, Menu } from "lucide-react";
+import {Facebook, Twitter, Instagram, Mail, Phone, MapPin} from "lucide-react";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation, Autoplay } from "swiper/modules";
@@ -224,7 +224,7 @@ export default function Home() {
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.3 }}
         >
-          At Jaguar Media & Entertainments LLP, it’s more than just media production… it's about fueling passion, creativity, and storytelling across every screen.
+          At Jaguar Media & Entertainments LLP, its more than just media production… its about fueling passion, creativity, and storytelling across every screen.
         </motion.p>
 
         {/* Swiper Carousel */}
