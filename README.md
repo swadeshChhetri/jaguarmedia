@@ -1,36 +1,53 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🐆 Jaguar Media & Entertainment LLP
 
-## Getting Started
+Welcome to the official company profile website of **Jaguar Media & Entertainment LLP**, your go-to partner for cutting-edge media solutions and entertainment services.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🏢 About Jaguar Media & Entertainment LLP
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+**Jaguar Media & Entertainment LLP** is a leading player in the media and entertainment industry, specializing in content production, distribution, and digital media solutions. We offer innovative services to clients across various sectors including film, television, digital content, and live events.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Our team is committed to providing high-quality solutions that create lasting impressions and engage audiences worldwide.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 🌟 Key Services
 
-To learn more about Next.js, take a look at the following resources:
+- **Content Creation & Production**: Feature films, TV shows, documentaries, and web series.
+- **Digital Media Solutions**: Online marketing, content distribution, and video-on-demand services.
+- **Event Management**: Organizing and managing large-scale events, including media expos and entertainment conferences.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 💻 Tech Stack
 
-## Deploy on Vercel
+This company website is built with the following technologies:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **Frontend:**
+  - Next.js
+  - React
+  - Tailwind CSS
+  - TypeScript
+- **Backend:**
+  - Node.js (if applicable, if your site uses a backend)
+  - Express.js (if applicable)
+- **Database:** (if applicable, e.g. MongoDB, MySQL)
+- **Hosting:** Vercel/Netlify (or other hosting providers)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## 🔧 Setup Instructions
+
+If you want to set up the project locally, follow these steps:
+
+### Prerequisites
+
+- Node.js and npm/yarn installed
+
+### Steps to Run Locally
+
+1. **Clone the repository**  
+   ```bash
+   git clone https://github.com/your-username/jaguar-media-website.git
+
