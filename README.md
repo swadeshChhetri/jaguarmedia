@@ -29,11 +29,7 @@ This company website is built with the following technologies:
   - React
   - Tailwind CSS
   - TypeScript
-- **Backend:**
-  - Node.js (if applicable, if your site uses a backend)
-  - Express.js (if applicable)
-- **Database:** (if applicable, e.g. MongoDB, MySQL)
-- **Hosting:** Vercel/Netlify (or other hosting providers)
+- **Hosting:** Vercel
 
 ---
 
@@ -46,8 +42,4 @@ If you want to set up the project locally, follow these steps:
 - Node.js and npm/yarn installed
 
 ### Steps to Run Locally
-
-1. **Clone the repository**  
-   ```bash
-   git clone https://github.com/your-username/jaguar-media-website.git
 
